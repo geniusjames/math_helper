@@ -7,7 +7,7 @@ target 'Math Helper' do
 
   # Pods for Math Helper
 	pod 'NavigationDrawer'
-
+  pod 'iosMath'
   target 'Math HelperTests' do
     inherit! :search_paths
     # Pods for testing

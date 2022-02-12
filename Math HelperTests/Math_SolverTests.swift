@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Math_Solver
+@testable import Math_Helper
 
 class MathSolverTests: XCTestCase {
 

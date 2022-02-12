@@ -11,12 +11,13 @@
 		1F625A217494E43E8BAC6EEC /* Pods_Math_Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74A33D5C9FEAE37DDF92F9B /* Pods_Math_Helper.framework */; };
 		825A417595160F320C7FC4A2 /* Pods_Math_Helper_Math_HelperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EEC7A87B871A7F2D91CC84 /* Pods_Math_Helper_Math_HelperUITests.framework */; };
 		B4141229279FE26B00A15325 /* FractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4141228279FE26B00A15325 /* FractionView.swift */; };
+		B414122D27A044CB00A15325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B414122C27A044CB00A15325 /* Assets.xcassets */; };
 		B4384A682774737900072DD3 /* Equation Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4384A672774737900072DD3 /* Equation Model.swift */; };
+		B4A0AFD727AD66A700191448 /* NumberFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0AFD627AD66A700191448 /* NumberFactsViewModel.swift */; };
 		B4B20AC3277111DE002F3255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20AC2277111DE002F3255 /* AppDelegate.swift */; };
 		B4B20AC5277111DE002F3255 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20AC4277111DE002F3255 /* SceneDelegate.swift */; };
 		B4B20ACA277111DE002F3255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B20AC8277111DE002F3255 /* Main.storyboard */; };
 		B4B20ACD277111DE002F3255 /* Math_Solver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4B20ACB277111DE002F3255 /* Math_Solver.xcdatamodeld */; };
-		B4B20ACF277111E0002F3255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B20ACE277111E0002F3255 /* Assets.xcassets */; };
 		B4B20AD2277111E0002F3255 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B20AD0277111E0002F3255 /* LaunchScreen.storyboard */; };
 		B4B20ADD277111E1002F3255 /* Math_SolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20ADC277111E1002F3255 /* Math_SolverTests.swift */; };
 		B4B20AE7277111E1002F3255 /* Math_SolverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20AE6277111E1002F3255 /* Math_SolverUITests.swift */; };
@@ -58,13 +59,14 @@
 		6AEB6DC8AB5EC927D83E2D6C /* Pods-Math Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Math Helper.debug.xcconfig"; path = "Target Support Files/Pods-Math Helper/Pods-Math Helper.debug.xcconfig"; sourceTree = "<group>"; };
 		8B816C046E270A52776D18B6 /* Pods-Math Helper-Math HelperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Math Helper-Math HelperUITests.release.xcconfig"; path = "Target Support Files/Pods-Math Helper-Math HelperUITests/Pods-Math Helper-Math HelperUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B4141228279FE26B00A15325 /* FractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionView.swift; sourceTree = "<group>"; };
+		B414122C27A044CB00A15325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4384A672774737900072DD3 /* Equation Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Equation Model.swift"; sourceTree = "<group>"; };
+		B4A0AFD627AD66A700191448 /* NumberFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactsViewModel.swift; sourceTree = "<group>"; };
 		B4B20ABF277111DE002F3255 /* Math Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B20AC2277111DE002F3255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B20AC4277111DE002F3255 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B4B20AC9277111DE002F3255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4B20ACC277111DE002F3255 /* Math_Solver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Math_Solver.xcdatamodel; sourceTree = "<group>"; };
-		B4B20ACE277111E0002F3255 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4B20AD1277111E0002F3255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4B20AD3277111E0002F3255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4B20AD8277111E1002F3255 /* Math HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Math HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B4FACCC7277C8A7C007CFA1B /* EquationSolverViewModel.swift */,
+				B4A0AFD627AD66A700191448 /* NumberFactsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 		B4B20AB6277111DE002F3255 = {
 			isa = PBXGroup;
 			children = (
+				B414122C27A044CB00A15325 /* Assets.xcassets */,
 				B4B84FA2278B8DDE0041EFF5 /* MenuTableViewCell.swift */,
 				B4E914A2277E196E00711765 /* Extensions.swift */,
 				B4141228279FE26B00A15325 /* FractionView.swift */,
@@ -180,7 +184,6 @@
 				B4B20AC4277111DE002F3255 /* SceneDelegate.swift */,
 				B4B20AC8277111DE002F3255 /* Main.storyboard */,
 				B4B84FA0278AF0EE0041EFF5 /* BaseViewController.swift */,
-				B4B20ACE277111E0002F3255 /* Assets.xcassets */,
 				B4B20AD0277111E0002F3255 /* LaunchScreen.storyboard */,
 				B4B20AD3277111E0002F3255 /* Info.plist */,
 				B4B20ACB277111DE002F3255 /* Math_Solver.xcdatamodeld */,
@@ -335,7 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4B20AD2277111E0002F3255 /* LaunchScreen.storyboard in Resources */,
-				B4B20ACF277111E0002F3255 /* Assets.xcassets in Resources */,
+				B414122D27A044CB00A15325 /* Assets.xcassets in Resources */,
 				B4B20ACA277111DE002F3255 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +497,7 @@
 				B4141229279FE26B00A15325 /* FractionView.swift in Sources */,
 				B4C4BE512773EE10006BED08 /* CalculatorViewController.swift in Sources */,
 				B4B20AC5277111DE002F3255 /* SceneDelegate.swift in Sources */,
+				B4A0AFD727AD66A700191448 /* NumberFactsViewModel.swift in Sources */,
 				B4C4BE532773EE31006BED08 /* EquationSolverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,6 +683,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -707,6 +712,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

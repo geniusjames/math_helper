@@ -1,16 +1,20 @@
 PODS:
+  - iosMath (0.9.4)
   - NavigationDrawer (1.0.3)
 
 DEPENDENCIES:
+  - iosMath
   - NavigationDrawer
 
 SPEC REPOS:
   trunk:
+    - iosMath
     - NavigationDrawer
 
 SPEC CHECKSUMS:
+  iosMath: f7a6cbadf9d836d2149c2a84c435b1effc244cba
   NavigationDrawer: ad87622628ed59589f8fe8e2338d27109ca51a64
 
-PODFILE CHECKSUM: 77509e24e582917693b1df6ffad2650dc8c6decd
+PODFILE CHECKSUM: 353ac1d09c308bd3796b123c9194842cd14d5495
 
 COCOAPODS: 1.11.2

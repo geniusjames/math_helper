@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Math Helper/Pods-Math Helper-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/NavigationDrawer/NavigationDrawer.framework
+${BUILT_PRODUCTS_DIR}/iosMath/iosMath.framework

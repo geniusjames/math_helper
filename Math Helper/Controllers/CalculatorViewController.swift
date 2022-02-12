@@ -19,6 +19,7 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
     @IBAction func numbers(_ sender: UIButton) {
         if operatorCount == 1 {
             isValid = true
@@ -27,6 +28,7 @@ class CalculatorViewController: UIViewController {
         expressions.append(String(sender.tag))
         expressionsTextField.text = expressions
     }
+
     @IBAction func operations(_ sender: UIButton) {
         if expressions.isEmpty {
             isValid = false

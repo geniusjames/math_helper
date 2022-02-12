@@ -11,7 +11,7 @@ import UIKit
 class SlidingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
 
-    var menuItems = ["Equation Solver", "Offline Calculator", "Number Facts", "Math Wiki", "Math Formula"]
+    var menuItems = ["Equation Solver", "Offline Calculator", "Number Facts", "Math Wiki", "Math Formula", "Help"]
     var interactor: Interactor?
     override func viewDidLoad() {
         self.tableView.dataSource = self

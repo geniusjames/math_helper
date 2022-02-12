@@ -1,12 +1,12 @@
 //
 //  EquationSolverViewController.swift
 //  Math Helper
-//
 //  Created by Geniusjames on 23/12/2021.
-//
 
 import UIKit
 import Network
+import iosMath
+import CloudKit
 
 class EquationSolverViewController: UIViewController {
 
@@ -17,12 +17,16 @@ class EquationSolverViewController: UIViewController {
     let viewModel = EquationSolverViewModel()
     var isValidEquation: Bool = false
     let monitor = NWPathMonitor()
-
     let alert = UIAlertController(title: "My Title",
                                   message: "This is my message.",
                                   preferredStyle: .alert)
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(resultView)
+        mathLabelConstraints()
+        //        resultView.center = view.center
+        resultView.sizeToFit()
+        inputField.addTarget(self, action: #selector(displayEqn), for: .allEditingEvents)
         solveButton.addTarget(self,
                               action: #selector(solveButtonPressed),
                               for: .touchUpInside)
@@ -49,6 +53,11 @@ class EquationSolverViewController: UIViewController {
         equationType.addTarget(self,
                                action: #selector(formatDisplay),
                                for: .allEvents)
+    }
+    @objc func displayEqn() {
+        DispatchQueue.main.async {
+            self.resultView.latex = self.inputField.text
+        }
     }
     @IBOutlet weak var notificationLabel: UILabel!
     func validateField() {
@@ -82,71 +91,92 @@ class EquationSolverViewController: UIViewController {
             break
         }
     }
+    @IBOutlet weak var result: UILabel!
+    let width = UIScreen.main.bounds.width
+    let height = UIScreen.main.bounds.height/8
+
+    lazy var resultView: MTMathUILabel = {
+        let label = MTMathUILabel()
+        label.textAlignment = .center
+        label.fontSize = 27
+        return label
+    }()
+    func mathLabelConstraints() {
+        resultView.translatesAutoresizingMaskIntoConstraints = false
+        resultView.widthAnchor.constraint(equalToConstant: width).isActive = true
+        resultView.heightAnchor.constraint(equalToConstant: height).isActive = true
+        resultView.bottomAnchor.constraint(equalTo: inputField.topAnchor, constant: -5).isActive = true
+        resultView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    }
     func solvePolynomials() {
         viewModel.polynomials(isValidEquation,
                               equation,
                               completion: { data in
-        switch data {
-        case .success(let result):
-            DispatchQueue.main.async {
-                self.resultLabel.text = result["solution"] as? String
+            switch data {
+            case .success(let result):
+                DispatchQueue.main.async {
+                    let formattedResult = self.viewModel.exponentize(str: result["solution"] as? String ?? "")
+                    self.resultLabel.text = result["solution"] as? String
+                    self.resultView.latex = formattedResult
+                }
+                print(result, "passed")
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.displayNotification(textToDisplay: error.localizedDescription,
+                                             type: .err)
+                }
             }
-            print(result, "passed")
-        case .failure(let error):
             DispatchQueue.main.async {
-                self.displayNotification(textToDisplay: error.localizedDescription,
-                                         type: .err)
+                self.activityIndicator.stopAnimating()
             }
-        }
-            DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-        }
 
         })
     }
     func solveEquations() {
-        let data = viewModel.equations(isValidEquation, equation)
-        switch data {
-        case .success(let result):
-            DispatchQueue.main.async {
-                self.resultLabel.text = result as? String
+        viewModel.equations(isValidEquation, equation, completion: { data in
+            switch data {
+            case .success(let result):
+                DispatchQueue.main.async {
+                    self.resultLabel.text = result as? String
+                }
+                print(result)
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.displayNotification(textToDisplay: error.localizedDescription,
+                                             type: .err)
+                }
             }
-            print(result)
-        case .failure(let error):
-            DispatchQueue.main.async {
-                self.displayNotification(textToDisplay: error.localizedDescription,
-                                         type: .err)
+        })
+                            }
+                            func displayNotification(textToDisplay: String,
+                                                     type: NotificationType) {
+            switch type {
+            case .err:
+                self.notificationLabel.textColor = .red
+            case .success:
+                self.notificationLabel.textColor = .green
+            }
+            UIView.animate(withDuration: 5) {
+                self.notificationLabel.text = textToDisplay
+                self.notificationLabel.alpha = 0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.notificationLabel.text = ""
+                self.notificationLabel.alpha = 1
             }
         }
-    }
-    func displayNotification(textToDisplay: String,
-                             type: NotificationType) {
-        switch type {
-        case .err:
-            self.notificationLabel.textColor = .red
-        case .success:
-            self.notificationLabel.textColor = .green
+                            @objc func formatDisplay() {
+            switch equationType.selectedSegmentIndex {
+            case 0:
+                inputField.placeholder = "Enter equation to solve or algebraic expressions to simplify"
+            case 1:
+                inputField.placeholder = "Enter a simultaneous equation"
+            default:
+                break
+            }
         }
-        UIView.animate(withDuration: 5) {
-            self.notificationLabel.text = textToDisplay
-            self.notificationLabel.alpha = 0
+                            @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+                            func activateSpinner() {
+
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.notificationLabel.text = ""
-            self.notificationLabel.alpha = 1
-        }
-    }
-    @objc func formatDisplay() {
-        switch equationType.selectedSegmentIndex {
-        case 0:
-            inputField.placeholder = "Enter equation to solve or algebraic expressions to simplify"
-        case 1:
-            inputField.placeholder = "Enter a simultaneous equation"
-        default:
-            break
-        }
-    }
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    func activateSpinner() {
-    }
-}
+                            }
